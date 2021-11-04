@@ -96,7 +96,7 @@ var cart = {
     // (D2) CART IS EMPTY
     if (empty) {
       item = document.createElement("div");
-      item.innerHTML = "Cart is empty";
+      item.innerHTML = "WebShop";
       cart.hItems.appendChild(item);
     }
 

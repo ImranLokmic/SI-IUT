@@ -1,27 +1,27 @@
 // DUMMY PRODUCTS (PRODUCT ID : DATA)
 var products = {
   123: {
-    name : "MokBook Thicc",
-    desc : "Greatest properly off ham exercise all.",
-    img : "dummy-pdt-b.jpg",
-    price : 2034
+    name : "HP Laptop",
+    desc : "Greatest laptop of 2021 by HP",
+    img : "../productimages/hplaptop.png",
+    price : 3999
   },
   124: {
-    name : "MokBook Rookie",
-    desc : "Unsatiable its possession nor off.",
-    img : "dummy-pdt-b.jpg",
-    price : 1247
+    name : "HP LAPTOP",
+    desc : "Greatest laptop of 2021 by HP",
+    img : "../productimages/hplaptop.png",
+    price : 3999
   },
   125: {
-    name : "iPong Max",
-    desc : "All difficulty unreserved the solicitude.",
-    img : "dummy-pdt-a.jpg",
-    price : 675
+    name : "iPhone 12",
+    desc : "Brand new iPhone to grace the world stage",
+    img : "../productimages/iphone12.png",
+    price : 1999
   },
   126: {
-    name : "iTab Pok",
-    desc : "Had judgment out property the supplied. ",
-    img : "dummy-pdt-a.jpg",
-    price : 842
+    name : "Huawei P40",
+    desc : "Simplicity in design",
+    img : "../productimages/huaweip40.png",
+    price : 1499
   }
 };

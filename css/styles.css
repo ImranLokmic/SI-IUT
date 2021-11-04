@@ -6,11 +6,18 @@
     border: 0;
 }
 
-body 
+
+html{
+  height: 100%;
+}
+
+body
     { 
     font: 62.5%/1.5  "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif; 
-    background: url(../img/wallpaper.jpg); 
+    background-color: #b8c6db;
+    background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
     background-size: cover;
+    background-repeat: no-repeat;
     color: #000000;     
     text-align:center; 
 } 
@@ -24,7 +31,7 @@ body
 #cart-wrap {
     font-family: arial, sans-serif;
     display: flex;
-    margin: 0 auto;
+    margin: 150px auto;
     max-width: 1000px;
   }
   #cart-products, #cart-items {
@@ -36,9 +43,9 @@ body
   input.cart, button.cart {
     padding: 10px;
     border: 0;
-    background: #ff4316;
+    background: #000000;
     color: #fff;
-    font-weight: 700;
+    font-weight: 24px;
     cursor: pointer;
   }
   
@@ -54,15 +61,15 @@ body
     border-radius: 5px;
     text-align: center;
   }
-  .p-img { max-width: 150px; }
-  .p-name, .p-price { font-weight: 700; }
-  .p-name, .p-desc, .p-price { margin: 5px 0; }
+  .p-img { max-width: 150px; max-height: 150px; }
+  .p-name, .p-price { font-weight: 700; font-size: 24px; }
+  .p-name, .p-desc, .p-price { margin: 5px 0;}
   .p-name { text-transform: uppercase; }
   .p-desc {
     color: #aaa;
-    font-size: 0.9em;
+    font-size: 12px;
   }
-  .p-price { font-size: 1.35em; }
+  .p-price { font-size: 24px; }
   input.p-add { width: 70%; }
   
   /* (C) CURRENT SHOPPING CART */
@@ -78,12 +85,12 @@ body
   }
   .c-item > * { box-sizing: border-box; }
   .c-name, .c-total, input.c-empty, input.c-checkout { width: 100%; }
-  .c-total, input.c-empty, input.c-checkout { margin-top: 10px; }
+  .c-total, input.c-empty, input.c-checkout { margin-top: 10px;}
   .c-del { width: 25%; }
   .c-qty { width: 75%; }
   .c-total {
     font-weight: 700;
-    font-size: 1.2em;
+    font-size: 16px;
   }
   
   /* (D) RESPONSIVE */
