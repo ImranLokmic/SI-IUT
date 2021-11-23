@@ -32,31 +32,69 @@
   </div>
 
 
-  <div id="header"><div id="header-text">WEBSHOP</div></div>
+  <!-- HEADER -->
+  <div class="header">
 
-  <div id="sidebar"></div>
-  <div id="store">
-
-    <div id="item-1">A</div>
-    <div id="item-2">B</div>
-    <div id="item-3">C</div>
-    <div id="item-4">D</div>
-    <div id="item-5">E</div>
-    <div id="item-6">F</div>
-    <div id="item-7">G</div>
-    <div id="item-8">H</div>
-
+    <h1>SHOP</h1>
   </div>
 
 
-  <!--LOADING SCRIPT-->
+  <!-- CAROUSEL -->
+  <div class="slideshow-container fade">
+    <div class="Containers">
+      <img src="img/h1.jpeg" style="width:100%">
+    </div>
+
+    <div class="Containers">
+      <img src="image2.jpg" style="width:100%">
+    </div>
+
+    <div class="Containers">
+      <img src="image3.jpg" style="width:100%">
+    </div>
+
+    <!-- LnR CONTROLS -->
+    <a class="back" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+  </div>
+  <br>
+
+
+
   <script>
+    //LOADING SCRIPT
     $(window).on('load', function () {
       $("#loading").hide();
     });
   </script>
+  <script>
+    var slidePosition = 1;
+    SlideShow(slidePosition);
 
-   
+    // CAROUSEL SCRIPT
+    function plusSlides(n) {
+      SlideShow(slidePosition += n);
+    }
+    function currentSlide(n) {
+      SlideShow(slidePosition = n);
+    }
+    function SlideShow(n) {
+      var i;
+      var slides = document.getElementsByClassName("Containers");
+      if (n > slides.length) {
+        slidePosition = 1
+      }
+      if (n < 1) {
+        slidePosition = slides.length
+      }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slidePosition - 1].style.display = "block";
+    }
+  </script>
+
+
 </body>
 
 </html>

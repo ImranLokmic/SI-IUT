@@ -6,132 +6,16 @@
   border: 0;
 }
 
-
 html {
-  height: 100%;
+  min-width: 100vh;
+  min-height: 100vh
 }
 
 body {
   font: 62.5%/1.5 "Lucida Grande", "Lucida Sans", Tahoma, Verdana, sans-serif;
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
-  background-size: cover;
-  background-repeat: no-repeat;
   color: #000000;
   text-align: center;
-  display: grid;
-  grid-template-rows: 100px auto;
-  grid-template-columns: 400px auto;
-  height: 100%;
 }
-
-@media (max-width:1200px) {
-  body{
-    grid-template-columns: 300px auto;
-  }
-}
-
-@media (max-width:900px) {
-  body{
-    grid-template-columns: 200px auto;
-  }
-}
-
-@media (max-width:600px) {
-  body{
-    display: block;
-  }
-  #sidebar{
-    display: none;
-  }
-}
-
-@media (max-width:420px){
-  body{display: none;}
-}
-
-#header {
-
-  grid-row: 1;
-  grid-column: span 2;
-
-}
-
-#header-text {
-
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 100px;
-  line-height: 100px;
-  text-align: left;
-  max-height: 100px;
-
-}
-
-
-#sidebar {
-
-  grid-row: 2;
-  grid-column: 1;
-  height: 100%;
-  background-color: red;
-}
-
-#store {
-
-  height: 100%;
-  grid-row: 2;
-  grid-column: 2;
-  display: grid;
-  grid-template-rows: auto auto; 
-  grid-template-columns: 50% auto ;
-
-
-}
-
-#item-1{
-  grid-row:1;
-  grid-column: 1;
-  background-color: blue;
-}
-
-#item-2{
-  grid-row:1;
-  grid-column: 2;
-  background-color: violet;
-}
-
-#item-3{
-  grid-row:2;
-  grid-column: 1;
-  background-color: pink;
-}
-
-#item-4{
-  grid-row:2;
-  grid-column:2;
-  background-color: green;
-
-}#item-5{
-  grid-row:3;
-  grid-column:1;
-  background-color: brown;
-
-}#item-6{
-  grid-row:3;
-  grid-column: 2;
-  background-color: black;
-}
-#item-7{
-  grid-row:4;
-  grid-column: 1;
-  background-color: turquoise;
-}
-#item-8{
-  grid-row:4;
-  grid-column: 2;
-  background-color: teal;
-}
-
 
 /*LOADING*/
 
@@ -153,4 +37,92 @@ body {
   top: 100px;
   left: auto;
   z-index: 100;
+}
+
+/*HEADER*/
+
+.header{
+  height: 100px;
+}
+
+.header h1{
+  text-align: center;
+  line-height: 100px;
+  font-size: 60px;
+}
+
+
+
+
+/*CAROUSEL*/
+* {
+  box-sizing: border-box
+}
+
+.slideshow-container {
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  margin: auto;
+
+}
+
+.Containers {
+  display: none;
+}
+
+.back,
+.forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: grey;
+  font-weight: bold;
+  font-size: 19px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+.back{
+  left: 0;
+  border-radius: 4px 0 0 4px;
+}
+.forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.Back:hover,
+.forward:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .5
+  }
+
+  to {
+    opacity: 2
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .5
+  }
+
+  to {
+    opacity: 2
+  }
 }
