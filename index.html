@@ -19,6 +19,7 @@
   <!--LINKS-->
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" sizes="192x192" href="img/icon.png">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Orbitron" />
 
   <!--SCRIPTS-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -36,29 +37,17 @@
   <div class="header">
 
     <h1>SHOP</h1>
+
+    <!-- STORE LINK -->  
+
+    <a href="javascript:void(0);" class="btn">WEBSTORE</a>
+
   </div>
 
 
-  <!-- CAROUSEL -->
-  <div class="slideshow-container fade">
-    <div class="Containers">
-      <img src="img/h1.jpeg" style="width:100%">
-    </div>
 
-    <div class="Containers">
-      <img src="image2.jpg" style="width:100%">
-    </div>
-
-    <div class="Containers">
-      <img src="image3.jpg" style="width:100%">
-    </div>
-
-    <!-- LnR CONTROLS -->
-    <a class="back" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="forward" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-  <br>
-
+  <!-- BANNER -->
+    <img src="img/h1.jpg">
 
 
   <script>
@@ -67,34 +56,8 @@
       $("#loading").hide();
     });
   </script>
-  <script>
-    var slidePosition = 1;
-    SlideShow(slidePosition);
-
-    // CAROUSEL SCRIPT
-    function plusSlides(n) {
-      SlideShow(slidePosition += n);
-    }
-    function currentSlide(n) {
-      SlideShow(slidePosition = n);
-    }
-    function SlideShow(n) {
-      var i;
-      var slides = document.getElementsByClassName("Containers");
-      if (n > slides.length) {
-        slidePosition = 1
-      }
-      if (n < 1) {
-        slidePosition = slides.length
-      }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slides[slidePosition - 1].style.display = "block";
-    }
-  </script>
 
 
 </body>
 
-</html>
+</html> 
