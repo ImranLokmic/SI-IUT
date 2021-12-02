@@ -42,6 +42,28 @@ switch($_GET["action"]) {
 	break;	
 }
 }
+
+
+if(isset($_POST['buy'])){
+    $to = "imranlokmic99@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $subject = "Buy Request";
+    $subject2 = "Buy Request";
+	foreach ($_SESSION["cart_item"] as $item){
+		$code = $item["code"];
+		$quant = $item["quantity"];
+		$stringquant = strval($quant);
+	}
+    $message = $code . " " .$stringquant;
+    $message2 = "Thank you for your request, we will contact you shortly ";
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    }
+
+
 ?>
 <html>
 
@@ -85,6 +107,7 @@ if(isset($_SESSION["cart_item"])){
     $total_quantity = 0;
     $total_price = 0;
 ?>
+		<form method="post" action="">
 		<table class="tbl-cart" cellpadding="10" cellspacing="1">
 			<tbody>
 				<tr>
@@ -107,7 +130,7 @@ if(isset($_SESSION["cart_item"])){
 					<td style="text-align:right;"><?php echo "$ ".$item["price"]; ?></td>
 					<td style="text-align:right;"><?php echo "$ ". number_format($item_price,2); ?></td>
 					<td style="text-align:center;"><a href="store.php?action=remove&code=<?php echo $item["code"]; ?>"
-							class="btnRemoveAction"><img src="icon-delete.png" alt="Remove Item" /></a></td>
+							class="btnRemoveAction"><img src="img\icon-delete.png" style="max-height:30px" alt="Remove Item" /></a></td>
 				</tr>
 				<?php
 				$total_quantity += $item["quantity"];
@@ -122,6 +145,13 @@ if(isset($_SESSION["cart_item"])){
 					</td>
 					<td></td>
 				</tr>
+				<tr>
+					<td colspan="1" style="text-align:center;">Email:</td>
+					<td colspan="5" style="text-align:center;"><input type="email" id="email" name="email" required></td>
+				</tr>
+				<tr>	
+					<td colspan="6" style="text-align:center;"><input type="submit" name="buy" value="BUY"></td>
+				</tr>
 			</tbody>
 		</table>
 		<?php
@@ -131,6 +161,7 @@ if(isset($_SESSION["cart_item"])){
 		<?php 
 }
 ?>
+	</form>
 	</div>
 
 
@@ -213,6 +244,10 @@ if(isset($_SESSION["cart_item"])){
 		});
 
 		//SHOP
+
+		//$(".hoodies:last").css("margin-right","100%")
+
+
 		function expandH() {
 			$(".hoodies").toggle();
 		}
